@@ -1,0 +1,83 @@
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <symbol id="hat" viewBox="0 0 64 64">
+    <path
+      d="M20 44H14a10 10 0 0 1-2-19 12 12 0 0 1 12-11 12 12 0 0 1 16 0 12 12 0 0 1 12 11 10 10 0 0 1-2 19h-6M20 36v20h24V36M20 51h24"
+      fill="none"
+      stroke="#ff6a00"
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+</svg>
+<div class="wrap">
+  <section class="hero">
+    <div class="brand">
+      <svg><use href="#hat" /></svg>
+      <div><b>Genz Coffe</b><span>Café &amp; Restaurant</span></div>
+    </div>
+    <h1>Welcome <em>Back!</em></h1>
+    <p>Manage your orders, serve your customers, and grow your business with Genz Coffe POS.</p>
+    <div class="cup">
+      <div class="plate"></div>
+      <div class="croissant"></div>
+      <div class="mug">Genz Coffe</div>
+      <div class="tag">Good Food<br />&nbsp;Better Mood</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="card">
+      <div class="brand">
+        <svg><use href="#hat" /></svg>
+        <div><b>Genz Coffe</b><span>POS System</span></div>
+      </div>
+      <h2>Login to Your Account</h2>
+      <p class="sub">Enter your credentials to continue</p>
+      <form id="f" novalidate (submit)="login(username.value, password.value, $event)">
+        <div class="field">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" />
+          </svg>
+          <input
+            #username
+            type="text"
+            placeholder="Username"
+            autocomplete="username"
+            aria-label="Username"
+          />
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24">
+            <rect x="5" y="11" width="14" height="10" rx="2" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+          </svg>
+          <input
+            #password
+            [type]="show ? 'text' : 'password'"
+            placeholder="Password"
+            autocomplete="current-password"
+            aria-label="Password"
+          />
+          <button type="button" class="eye" id="eye" aria-label="Show password" (click)="toggleEye()">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </button>
+        </div>
+        <div class="err" id="err" role="alert" [style.color]="isError ? '#d6322b' : '#16a34a'">{{ message }}</div>
+        <div class="row"></div>
+        
+        <button class="btn primary" type="submit">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5M3 12h11M10 8l4 4-4 4" />
+          </svg>
+          Login
+        </button>
+      </form>
+      <p class="copy">© 2026 Genz Coffe Café &amp; Restaurant. All rights reserved.</p>
+    </div>
+  </section>
+</div>
